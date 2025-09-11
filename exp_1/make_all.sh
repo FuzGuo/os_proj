@@ -5,6 +5,8 @@ set -e
 
 LINUX_DIR="../lab/linux-0.11"
 
+./set_code.sh
+
 echo "--- 开始在目录 '$LINUX_DIR' 中执行 make all ---"
 
 # 检查目录是否存在
