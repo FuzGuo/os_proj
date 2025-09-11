@@ -18,7 +18,7 @@
 │   ├── gdb
 │   ├── gdb-cmd.txt
 │   ├── hdc
-│   ├── hdc-0.11.img #make all生成的img文件
+│   ├── hdc-0.11.img 
 │   ├── linux-0.11
 │   ├── mount-hdc
 │   ├── run
