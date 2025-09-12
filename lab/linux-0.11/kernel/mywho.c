@@ -1,43 +1,34 @@
-#include <asm/segment.h>
-#include <errno.h>
-#include <string.h>
+#include <asm/segment.h> /* 用于 get_fs_byte, put_fs_byte */
+#include <errno.h>       /* 用于错误码 EINVAL */
+#include <string.h>      /* 用于 strcpy, strlen */
 
-char _myname[21]; /* 20 chars + '\0' */
+char _myname[21];
 
 int sys_iam(const char *name)
 {
-    char str[22]; /* 20 chars + '\0' + '\n' */
-    int i = 0;
-    do
-    {
-        str[i] = get_fs_byte(name + i);
-    } while (i <= 22 && str[i++] != '\0'); 
-    if (i > 21)
-    {
-        return -EINVAL;
-    }
-    else
-    {
-        strcpy(_myname, str);
-    }
-    return 0;
+	char tmp[21]; /* 使用临时缓冲区以在验证成功前避免覆写 _myname */
+	int i;
+
+	/* 20个字符 + '\0' */
+	for (i = 0; i < 21; i++) {
+		/* 从用户空间拷贝一个字节，并检查是否为字符串结束符 */
+		if ((tmp[i] = get_fs_byte(name + i)) == '\0') {
+			strcpy(_myname, tmp); 
+			return 0;
+		}
+	}
+	return -EINVAL; // 太长了
 }
+
 int sys_whoami(char *name, unsigned int size)
 {
-    int length = strlen(_myname);
-    
-    if (size < length)
-    {
-        return -EINVAL;
-    }
-    else
-    {
-        int i = 0;
-        for (i = 0; i < length; i++)
-        {
-            put_fs_byte(_myname[i], name + i);
-        }
-    }
-    // printk("%s\n", _myname);
-    return 0;
+	int i, len = strlen(_myname);
+
+	if (size <= len)
+		return -EINVAL;
+
+	for (i = 0; i <= len; i++)
+		put_fs_byte(_myname[i], name + i);
+
+	return 0;
 }
