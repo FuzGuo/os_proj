@@ -34,12 +34,12 @@
 00000000000i[     ]   SB16 support: no
 00000000000i[     ]   USB support: no
 00000000000i[     ]   VGA extension support: vbe 
-00000000000i[MEM0 ] allocated memory at 0xeae11010. after alignment, vector=0xeae12000
+00000000000i[MEM0 ] allocated memory at 0xead0b010. after alignment, vector=0xead0c000
 00000000000i[MEM0 ] 16.00MB
 00000000000i[MEM0 ] rom at 0xfffe0000/131072 ('./bochs/BIOS-bochs-latest')
 00000000000i[MEM0 ] rom at 0xc0000/39424 ('./bochs/vgabios.bin')
 00000000000i[CMOS ] Using local time for initial clock
-00000000000i[CMOS ] Setting initial clock to: Fri Sep 12 15:40:30 2025 (time0=1757662830)
+00000000000i[CMOS ] Setting initial clock to: Tue Sep 16 22:27:13 2025 (time0=1758032833)
 00000000000i[DMA  ] channel 4 used by cascade
 00000000000i[DMA  ] channel 2 used by Floppy Drive
 00000000000i[FDD  ] fd0: './linux-0.11/Image' ro=0, h=2,t=80,spt=18
@@ -98,9 +98,7 @@
 00001200000i[XGUI ] charmap update. Font Height is 16
 00004768797i[BIOS ] IDE time out
 00004967660i[BIOS ] Booting from 0000:7c00
-00016201633i[FDD  ] partial read() on floppy image returns 193/512
-00016246588i[FDD  ] read() on floppy image returns 0
-00016292788i[FDD  ] read() on floppy image returns 0
+00016292788i[FDD  ] partial read() on floppy image returns 481/512
 00016337743i[FDD  ] read() on floppy image returns 0
 00016382698i[FDD  ] read() on floppy image returns 0
 00016427653i[FDD  ] read() on floppy image returns 0
@@ -238,123 +236,26 @@
 00022371683i[FDD  ] read() on floppy image returns 0
 00022416638i[FDD  ] read() on floppy image returns 0
 00022467108i[BIOS ] int13_harddisk: function 15, unmapped device for ELDL=81
-00158413000i[XGUI ] X11 Beep ON (frequency=inf)
-00158865969i[XGUI ] X11 Beep OFF
-00158865969i[PIT81] Changing GATE 2 to: 0
-00159423358i[XGUI ] X11 Beep ON (frequency=749.96)
-00159423358i[PIT81] Changing GATE 2 to: 1
-00159600824i[XGUI ] X11 Beep ON (frequency=749.96)
-00159600828i[XGUI ] X11 Beep ON (frequency=749.96)
-00159602461i[XGUI ] X11 Beep ON (frequency=749.96)
-00159602465i[XGUI ] X11 Beep ON (frequency=749.96)
-00159603774i[XGUI ] X11 Beep ON (frequency=749.96)
-00159604024i[XGUI ] X11 Beep ON (frequency=749.96)
-00159604028i[XGUI ] X11 Beep ON (frequency=749.96)
-00159605837i[XGUI ] X11 Beep ON (frequency=749.96)
-00159605841i[XGUI ] X11 Beep ON (frequency=749.96)
-00159607234i[XGUI ] X11 Beep ON (frequency=749.96)
-00159672824i[XGUI ] X11 Beep ON (frequency=749.96)
-00159672828i[XGUI ] X11 Beep ON (frequency=749.96)
-00159674461i[XGUI ] X11 Beep ON (frequency=749.96)
-00159674465i[XGUI ] X11 Beep ON (frequency=749.96)
-00159675834i[XGUI ] X11 Beep ON (frequency=749.96)
-00160145987i[XGUI ] X11 Beep OFF
-00160145987i[PIT81] Changing GATE 2 to: 0
-00160803651i[XGUI ] X11 Beep ON (frequency=749.96)
-00160803651i[PIT81] Changing GATE 2 to: 1
-00160804024i[XGUI ] X11 Beep ON (frequency=749.96)
-00160804028i[XGUI ] X11 Beep ON (frequency=749.96)
-00160805714i[XGUI ] X11 Beep ON (frequency=749.96)
-00160805718i[XGUI ] X11 Beep ON (frequency=749.96)
-00160807111i[XGUI ] X11 Beep ON (frequency=749.96)
-00160807224i[XGUI ] X11 Beep ON (frequency=749.96)
-00160807228i[XGUI ] X11 Beep ON (frequency=749.96)
-00160809174i[XGUI ] X11 Beep ON (frequency=749.96)
-00160809178i[XGUI ] X11 Beep ON (frequency=749.96)
-00160810548i[XGUI ] X11 Beep ON (frequency=749.96)
-00160884824i[XGUI ] X11 Beep ON (frequency=749.96)
-00160884828i[XGUI ] X11 Beep ON (frequency=749.96)
-00160886461i[XGUI ] X11 Beep ON (frequency=749.96)
-00160886465i[XGUI ] X11 Beep ON (frequency=749.96)
-00160887626i[XGUI ] X11 Beep ON (frequency=749.96)
-00161346007i[XGUI ] X11 Beep OFF
-00161346007i[PIT81] Changing GATE 2 to: 0
-00162003444i[XGUI ] X11 Beep ON (frequency=749.96)
-00162003444i[PIT81] Changing GATE 2 to: 1
-00162004024i[XGUI ] X11 Beep ON (frequency=749.96)
-00162004028i[XGUI ] X11 Beep ON (frequency=749.96)
-00162005661i[XGUI ] X11 Beep ON (frequency=749.96)
-00162005665i[XGUI ] X11 Beep ON (frequency=749.96)
-00162006904i[XGUI ] X11 Beep ON (frequency=749.96)
-00162007224i[XGUI ] X11 Beep ON (frequency=749.96)
-00162007228i[XGUI ] X11 Beep ON (frequency=749.96)
-00162008967i[XGUI ] X11 Beep ON (frequency=749.96)
-00162008971i[XGUI ] X11 Beep ON (frequency=749.96)
-00162010341i[XGUI ] X11 Beep ON (frequency=749.96)
-00162160824i[XGUI ] X11 Beep ON (frequency=749.96)
-00162160828i[XGUI ] X11 Beep ON (frequency=749.96)
-00162162461i[XGUI ] X11 Beep ON (frequency=749.96)
-00162162465i[XGUI ] X11 Beep ON (frequency=749.96)
-00162163847i[XGUI ] X11 Beep ON (frequency=749.96)
-00162626028i[XGUI ] X11 Beep OFF
-00162626028i[PIT81] Changing GATE 2 to: 0
-00163203243i[XGUI ] X11 Beep ON (frequency=749.96)
-00163203243i[PIT81] Changing GATE 2 to: 1
-00163204024i[XGUI ] X11 Beep ON (frequency=749.96)
-00163204028i[XGUI ] X11 Beep ON (frequency=749.96)
-00163205661i[XGUI ] X11 Beep ON (frequency=749.96)
-00163205665i[XGUI ] X11 Beep ON (frequency=749.96)
-00163206703i[XGUI ] X11 Beep ON (frequency=749.96)
-00163207224i[XGUI ] X11 Beep ON (frequency=749.96)
-00163207228i[XGUI ] X11 Beep ON (frequency=749.96)
-00163208861i[XGUI ] X11 Beep ON (frequency=749.96)
-00163208865i[XGUI ] X11 Beep ON (frequency=749.96)
-00163210140i[XGUI ] X11 Beep ON (frequency=749.96)
-00163496824i[XGUI ] X11 Beep ON (frequency=749.96)
-00163496828i[XGUI ] X11 Beep ON (frequency=749.96)
-00163498461i[XGUI ] X11 Beep ON (frequency=749.96)
-00163498465i[XGUI ] X11 Beep ON (frequency=749.96)
-00163499483i[XGUI ] X11 Beep ON (frequency=749.96)
-00163946048i[XGUI ] X11 Beep OFF
-00163946048i[PIT81] Changing GATE 2 to: 0
-00164403769i[XGUI ] X11 Beep ON (frequency=749.96)
-00164403769i[PIT81] Changing GATE 2 to: 1
-00164404024i[XGUI ] X11 Beep ON (frequency=749.96)
-00164404028i[XGUI ] X11 Beep ON (frequency=749.96)
-00164405832i[XGUI ] X11 Beep ON (frequency=749.96)
-00164405836i[XGUI ] X11 Beep ON (frequency=749.96)
-00164407224i[XGUI ] X11 Beep ON (frequency=749.96)
-00164407228i[XGUI ] X11 Beep ON (frequency=749.96)
-00164407284i[XGUI ] X11 Beep ON (frequency=749.96)
-00164409269i[XGUI ] X11 Beep ON (frequency=749.96)
-00164409273i[XGUI ] X11 Beep ON (frequency=749.96)
-00164410666i[XGUI ] X11 Beep ON (frequency=749.96)
-00164866063i[XGUI ] X11 Beep OFF
-00164866063i[PIT81] Changing GATE 2 to: 0
-00164927849i[XGUI ] X11 Beep ON (frequency=749.96)
-00164927849i[PIT81] Changing GATE 2 to: 1
-00165386074i[XGUI ] X11 Beep OFF
-00165386074i[PIT81] Changing GATE 2 to: 0
-00644400000i[     ] cpu loop quit, shutting down simulator
-00644400000i[CPU  ] CPU is in protected mode (active)
-00644400000i[CPU  ] CS.d_b = 32 bit
-00644400000i[CPU  ] SS.d_b = 32 bit
-00644400000i[CPU  ] | EAX=ffffffff  EBX=ffffffff  ECX=0001c25c  EDX=00000036
-00644400000i[CPU  ] | ESP=0001c11c  EBP=00021eac  ESI=00000000  EDI=00000001
-00644400000i[CPU  ] | IOPL=0 id vip vif ac vm rf nt of df IF tf sf zf af PF cf
-00644400000i[CPU  ] | SEG selector     base    limit G D
-00644400000i[CPU  ] | SEG sltr(index|ti|rpl)     base    limit G D
-00644400000i[CPU  ] |  CS:0008( 0001| 0|  0) 00000000 00000fff 1 1
-00644400000i[CPU  ] |  DS:0010( 0002| 0|  0) 00000000 00000fff 1 1
-00644400000i[CPU  ] |  SS:0010( 0002| 0|  0) 00000000 00000fff 1 1
-00644400000i[CPU  ] |  ES:0010( 0002| 0|  0) 00000000 00000fff 1 1
-00644400000i[CPU  ] |  FS:0017( 0002| 1|  3) 00000000 0000009f 1 1
-00644400000i[CPU  ] |  GS:0017( 0002| 1|  3) 00000000 0000009f 1 1
-00644400000i[CPU  ] | EIP=00006c05 (00006c05)
-00644400000i[CPU  ] | CR0=0x8000001b CR1=0 CR2=0x0805dc0c
-00644400000i[CPU  ] | CR3=0x00000000 CR4=0x00000000
-00644400000i[CPU  ] >> jnz .+0xffffffe4 (0x00006beb) : 75E4
-00644400000i[CMOS ] Last time is 1757662991 (Fri Sep 12 15:43:11 2025)
-00644400000i[XGUI ] Exit
-00644400000i[     ] restoring default signal behavior
-00644400000i[CTRL ] quit_sim called with exit code 1
+00662400000i[     ] cpu loop quit, shutting down simulator
+00662400000i[CPU  ] CPU is in protected mode (active)
+00662400000i[CPU  ] CS.d_b = 32 bit
+00662400000i[CPU  ] SS.d_b = 32 bit
+00662400000i[CPU  ] | EAX=ffffffff  EBX=ffffffff  ECX=0001c6f8  EDX=00000016
+00662400000i[CPU  ] | ESP=0001c630  EBP=000227cc  ESI=00000000  EDI=00000002
+00662400000i[CPU  ] | IOPL=0 id vip vif ac vm rf nt of df IF tf sf ZF af PF cf
+00662400000i[CPU  ] | SEG selector     base    limit G D
+00662400000i[CPU  ] | SEG sltr(index|ti|rpl)     base    limit G D
+00662400000i[CPU  ] |  CS:0008( 0001| 0|  0) 00000000 00000fff 1 1
+00662400000i[CPU  ] |  DS:0010( 0002| 0|  0) 00000000 00000fff 1 1
+00662400000i[CPU  ] |  SS:0010( 0002| 0|  0) 00000000 00000fff 1 1
+00662400000i[CPU  ] |  ES:0010( 0002| 0|  0) 00000000 00000fff 1 1
+00662400000i[CPU  ] |  FS:0017( 0002| 1|  3) 00000000 0000009f 1 1
+00662400000i[CPU  ] |  GS:0017( 0002| 1|  3) 00000000 0000009f 1 1
+00662400000i[CPU  ] | EIP=00006b7d (00006b7d)
+00662400000i[CPU  ] | CR0=0x8000001b CR1=0 CR2=0x0804253c
+00662400000i[CPU  ] | CR3=0x00000000 CR4=0x00000000
+00662400000i[CPU  ] >> jz .+0x00000011 (0x00006b90) : 7411
+00662400000i[CMOS ] Last time is 1758032998 (Tue Sep 16 22:29:58 2025)
+00662400000i[XGUI ] Exit
+00662400000i[     ] restoring default signal behavior
+00662400000i[CTRL ] quit_sim called with exit code 1

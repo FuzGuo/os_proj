@@ -135,7 +135,14 @@ void main(void)		/* This really IS void, no error here. */
 	floppy_init();
 	sti();
 	move_to_user_mode();
-	if (!fork()) {		/* we count on this going ok */
+
+	setup((void *)&drive_info);
+	(void)open("/dev/tty0", O_RDWR, 0);
+	(void)dup(0);
+	(void)dup(0);
+	(void)open("/etc/process.log", O_CREAT | O_TRUNC | O_WRONLY, 0666);
+
+	if (!fork()) {		
 		init();
 	}
 /*

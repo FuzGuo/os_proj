@@ -2,6 +2,7 @@
     "files.associations": {
         "segment.h": "c",
         "errno.h": "c",
-        "string.h": "c"
+        "string.h": "c",
+        "kernel.h": "c"
     }
 }
