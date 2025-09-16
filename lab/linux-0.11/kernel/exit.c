@@ -115,11 +115,7 @@ static void tell_father(int pid)
 int do_exit(long code)
 {
 	int i;
-	current->turnaround_time = jiffies - current->start_time;
 
-	printlog("pid=%d, state=E, time=%ld, run_time=%ld, wait_time=%ld, turnaround_time=%ld\n",
-			 current->pid, jiffies, current->run_time,
-			 current->wait_time, current->turnaround_time);
 	free_page_tables(get_base(current->ldt[1]), get_limit(0x0f));
 	free_page_tables(get_base(current->ldt[2]), get_limit(0x17));
 	for (i = 0; i < NR_TASKS; i++)
@@ -147,6 +143,12 @@ int do_exit(long code)
 		kill_session();
 	current->state = TASK_ZOMBIE;
 	current->exit_code = code;
+
+	current->turnaround_time = jiffies - current->start_time;
+
+	printlog("pid=%d, state=E, time=%ld, run_time=%ld, wait_time=%ld, turnaround_time=%ld\n",
+			 current->pid, jiffies, current->run_time,
+			 current->wait_time, current->turnaround_time);
 	tell_father(current->father);
 	schedule();
 	return (-1); /* just to suppress warnings */
@@ -211,6 +213,9 @@ repeat:
 		if (options & WNOHANG)
 			return 0;
 		current->state = TASK_INTERRUPTIBLE;
+		// Change by Fuzheng Guo 20250916, log of sleep
+		if (current->pid)
+			printlog("pid=%d, state=W, time=%ld\n", current->pid, jiffies);
 		schedule();
 		if (!(current->signal &= ~(1 << (SIGCHLD - 1))))
 			goto repeat;
