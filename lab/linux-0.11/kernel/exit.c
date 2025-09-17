@@ -213,7 +213,6 @@ repeat:
 		if (options & WNOHANG)
 			return 0;
 		current->state = TASK_INTERRUPTIBLE;
-		// Change by Fuzheng Guo 20250916, log of sleep
 		if (current->pid)
 			printlog("pid=%d, state=W, time=%ld\n", current->pid, jiffies);
 		schedule();

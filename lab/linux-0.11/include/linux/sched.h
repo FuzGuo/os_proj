@@ -107,7 +107,6 @@ struct task_struct {
 /* tss for this task */
 	struct tss_struct tss;
 	/*Fuzheng Guo 20250916, add start time*/
-	// long start_time;
 	long run_time;
     long wait_time;
     long turnaround_time;

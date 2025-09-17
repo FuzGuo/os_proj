@@ -173,13 +173,12 @@ void schedule(void)
 				(*p)->counter = ((*p)->counter >> 1) +
 								(*p)->priority;
 	}
-	// 下面这个是新加入的代码
+	// 新加入的代码
 	if (current != task[next])
-	{ // FIX: Compare pointers
+	{
 		if (current && current->state == TASK_RUNNING)
 			printlog("pid=%d, state=J, time=%ld\n", current->pid, jiffies);
-		printlog("pid=%d, state=R, time=%ld\n", task[next]->pid, jiffies); // FIX: Use task[next] to get pointer
-		switch_to(next);
+		printlog("pid=%d, state=R, time=%ld\n", task[next]->pid, jiffies);
 	}
 	switch_to(next);
 }
@@ -205,7 +204,8 @@ void sleep_on(struct task_struct **p)
 	// Change by Fuzheng Guo 20250916, log of sleep
 	printlog("pid=%d, state=W, time=%ld\n", current->pid, jiffies);
 	schedule();
-	if (tmp){
+	if (tmp)
+	{
 		tmp->state = 0;
 		// Change by Fuzheng Guo 20250916, log of wake up
 		printlog("pid=%d, state=J, time=%ld\n", tmp->pid, jiffies);
@@ -234,8 +234,10 @@ repeat:
 	}
 	*p = NULL;
 	if (tmp)
+	{
 		tmp->state = 0;
 		printlog("pid=%d, state=J, time=%ld\n", tmp->pid, jiffies);
+	}
 }
 
 void wake_up(struct task_struct **p)
@@ -243,7 +245,6 @@ void wake_up(struct task_struct **p)
 	if (p && *p)
 	{
 		(**p).state = 0;
-		// Change by Fuzheng Guo 20250916, log of wake up
 		printlog("pid=%d, state=J, time=%ld\n", (**p).pid, jiffies);
 
 		*p = NULL;
