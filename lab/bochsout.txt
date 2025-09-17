@@ -34,12 +34,12 @@
 00000000000i[     ]   SB16 support: no
 00000000000i[     ]   USB support: no
 00000000000i[     ]   VGA extension support: vbe 
-00000000000i[MEM0 ] allocated memory at 0xead0b010. after alignment, vector=0xead0c000
+00000000000i[MEM0 ] allocated memory at 0xedd20010. after alignment, vector=0xedd21000
 00000000000i[MEM0 ] 16.00MB
 00000000000i[MEM0 ] rom at 0xfffe0000/131072 ('./bochs/BIOS-bochs-latest')
 00000000000i[MEM0 ] rom at 0xc0000/39424 ('./bochs/vgabios.bin')
 00000000000i[CMOS ] Using local time for initial clock
-00000000000i[CMOS ] Setting initial clock to: Tue Sep 16 22:27:13 2025 (time0=1758032833)
+00000000000i[CMOS ] Setting initial clock to: Wed Sep 17 22:27:32 2025 (time0=1758119252)
 00000000000i[DMA  ] channel 4 used by cascade
 00000000000i[DMA  ] channel 2 used by Floppy Drive
 00000000000i[FDD  ] fd0: './linux-0.11/Image' ro=0, h=2,t=80,spt=18
@@ -236,26 +236,89 @@
 00022371683i[FDD  ] read() on floppy image returns 0
 00022416638i[FDD  ] read() on floppy image returns 0
 00022467108i[BIOS ] int13_harddisk: function 15, unmapped device for ELDL=81
-00662400000i[     ] cpu loop quit, shutting down simulator
-00662400000i[CPU  ] CPU is in protected mode (active)
-00662400000i[CPU  ] CS.d_b = 32 bit
-00662400000i[CPU  ] SS.d_b = 32 bit
-00662400000i[CPU  ] | EAX=ffffffff  EBX=ffffffff  ECX=0001c6f8  EDX=00000016
-00662400000i[CPU  ] | ESP=0001c630  EBP=000227cc  ESI=00000000  EDI=00000002
-00662400000i[CPU  ] | IOPL=0 id vip vif ac vm rf nt of df IF tf sf ZF af PF cf
-00662400000i[CPU  ] | SEG selector     base    limit G D
-00662400000i[CPU  ] | SEG sltr(index|ti|rpl)     base    limit G D
-00662400000i[CPU  ] |  CS:0008( 0001| 0|  0) 00000000 00000fff 1 1
-00662400000i[CPU  ] |  DS:0010( 0002| 0|  0) 00000000 00000fff 1 1
-00662400000i[CPU  ] |  SS:0010( 0002| 0|  0) 00000000 00000fff 1 1
-00662400000i[CPU  ] |  ES:0010( 0002| 0|  0) 00000000 00000fff 1 1
-00662400000i[CPU  ] |  FS:0017( 0002| 1|  3) 00000000 0000009f 1 1
-00662400000i[CPU  ] |  GS:0017( 0002| 1|  3) 00000000 0000009f 1 1
-00662400000i[CPU  ] | EIP=00006b7d (00006b7d)
-00662400000i[CPU  ] | CR0=0x8000001b CR1=0 CR2=0x0804253c
-00662400000i[CPU  ] | CR3=0x00000000 CR4=0x00000000
-00662400000i[CPU  ] >> jz .+0x00000011 (0x00006b90) : 7411
-00662400000i[CMOS ] Last time is 1758032998 (Tue Sep 16 22:29:58 2025)
-00662400000i[XGUI ] Exit
-00662400000i[     ] restoring default signal behavior
-00662400000i[CTRL ] quit_sim called with exit code 1
+00336015092i[XGUI ] X11 Beep ON (frequency=inf)
+00336016841i[XGUI ] X11 Beep ON (frequency=749.96)
+00336018590i[XGUI ] X11 Beep ON (frequency=749.96)
+00336469141i[XGUI ] X11 Beep OFF
+00336469141i[PIT81] Changing GATE 2 to: 0
+00337019428i[XGUI ] X11 Beep ON (frequency=749.96)
+00337019428i[PIT81] Changing GATE 2 to: 1
+00337200824i[XGUI ] X11 Beep ON (frequency=749.96)
+00337200828i[XGUI ] X11 Beep ON (frequency=749.96)
+00337202461i[XGUI ] X11 Beep ON (frequency=749.96)
+00337202465i[XGUI ] X11 Beep ON (frequency=749.96)
+00337204024i[XGUI ] X11 Beep ON (frequency=749.96)
+00337204028i[XGUI ] X11 Beep ON (frequency=749.96)
+00337205661i[XGUI ] X11 Beep ON (frequency=749.96)
+00337205665i[XGUI ] X11 Beep ON (frequency=749.96)
+00337211269i[XGUI ] X11 Beep ON (frequency=749.96)
+00337213018i[XGUI ] X11 Beep ON (frequency=749.96)
+00337669161i[XGUI ] X11 Beep OFF
+00337669161i[PIT81] Changing GATE 2 to: 0
+00338279246i[XGUI ] X11 Beep ON (frequency=749.96)
+00338279246i[PIT81] Changing GATE 2 to: 1
+00338400824i[XGUI ] X11 Beep ON (frequency=749.96)
+00338400828i[XGUI ] X11 Beep ON (frequency=749.96)
+00338402461i[XGUI ] X11 Beep ON (frequency=749.96)
+00338402465i[XGUI ] X11 Beep ON (frequency=749.96)
+00338404024i[XGUI ] X11 Beep ON (frequency=749.96)
+00338404028i[XGUI ] X11 Beep ON (frequency=749.96)
+00338405661i[XGUI ] X11 Beep ON (frequency=749.96)
+00338405665i[XGUI ] X11 Beep ON (frequency=749.96)
+00338407224i[XGUI ] X11 Beep ON (frequency=749.96)
+00338407228i[XGUI ] X11 Beep ON (frequency=749.96)
+00338408861i[XGUI ] X11 Beep ON (frequency=749.96)
+00338408865i[XGUI ] X11 Beep ON (frequency=749.96)
+00338414414i[XGUI ] X11 Beep ON (frequency=749.96)
+00338416163i[XGUI ] X11 Beep ON (frequency=749.96)
+00338417912i[XGUI ] X11 Beep ON (frequency=749.96)
+00338869179i[XGUI ] X11 Beep OFF
+00338869179i[PIT81] Changing GATE 2 to: 0
+00339343427i[XGUI ] X11 Beep ON (frequency=749.96)
+00339343427i[PIT81] Changing GATE 2 to: 1
+00339600824i[XGUI ] X11 Beep ON (frequency=749.96)
+00339600828i[XGUI ] X11 Beep ON (frequency=749.96)
+00339602461i[XGUI ] X11 Beep ON (frequency=749.96)
+00339602465i[XGUI ] X11 Beep ON (frequency=749.96)
+00339604024i[XGUI ] X11 Beep ON (frequency=749.96)
+00339604028i[XGUI ] X11 Beep ON (frequency=749.96)
+00339605661i[XGUI ] X11 Beep ON (frequency=749.96)
+00339605665i[XGUI ] X11 Beep ON (frequency=749.96)
+00339607224i[XGUI ] X11 Beep ON (frequency=749.96)
+00339607228i[XGUI ] X11 Beep ON (frequency=749.96)
+00339608861i[XGUI ] X11 Beep ON (frequency=749.96)
+00339608865i[XGUI ] X11 Beep ON (frequency=749.96)
+00339615038i[XGUI ] X11 Beep ON (frequency=749.96)
+00339616787i[XGUI ] X11 Beep ON (frequency=749.96)
+00339618536i[XGUI ] X11 Beep ON (frequency=749.96)
+00340069199i[XGUI ] X11 Beep OFF
+00340069199i[PIT81] Changing GATE 2 to: 0
+00340816620i[XGUI ] X11 Beep ON (frequency=749.96)
+00340816620i[PIT81] Changing GATE 2 to: 1
+00340818369i[XGUI ] X11 Beep ON (frequency=749.96)
+00340820118i[XGUI ] X11 Beep ON (frequency=749.96)
+00341269217i[XGUI ] X11 Beep OFF
+00341269217i[PIT81] Changing GATE 2 to: 0
+00740400000i[     ] cpu loop quit, shutting down simulator
+00740400000i[CPU  ] CPU is in protected mode (active)
+00740400000i[CPU  ] CS.d_b = 32 bit
+00740400000i[CPU  ] SS.d_b = 32 bit
+00740400000i[CPU  ] | EAX=00fc0000  EBX=ffffffff  ECX=0001c6ac  EDX=00000003
+00740400000i[CPU  ] | ESP=0001c634  EBP=000227cc  ESI=00000000  EDI=00000002
+00740400000i[CPU  ] | IOPL=0 id vip vif ac vm rf nt of df IF tf sf zf af PF cf
+00740400000i[CPU  ] | SEG selector     base    limit G D
+00740400000i[CPU  ] | SEG sltr(index|ti|rpl)     base    limit G D
+00740400000i[CPU  ] |  CS:0008( 0001| 0|  0) 00000000 00000fff 1 1
+00740400000i[CPU  ] |  DS:0010( 0002| 0|  0) 00000000 00000fff 1 1
+00740400000i[CPU  ] |  SS:0010( 0002| 0|  0) 00000000 00000fff 1 1
+00740400000i[CPU  ] |  ES:0010( 0002| 0|  0) 00000000 00000fff 1 1
+00740400000i[CPU  ] |  FS:0017( 0002| 1|  3) 00000000 0000009f 1 1
+00740400000i[CPU  ] |  GS:0017( 0002| 1|  3) 00000000 0000009f 1 1
+00740400000i[CPU  ] | EIP=00006cf0 (00006cf0)
+00740400000i[CPU  ] | CR0=0x8000001b CR1=0 CR2=0x0804253c
+00740400000i[CPU  ] | CR3=0x00000000 CR4=0x00000000
+00740400000i[CPU  ] >> cmp dword ptr ds:[eax], 0x00000000 : 833800
+00740400000i[CMOS ] Last time is 1758119437 (Wed Sep 17 22:30:37 2025)
+00740400000i[XGUI ] Exit
+00740400000i[     ] restoring default signal behavior
+00740400000i[CTRL ] quit_sim called with exit code 1
