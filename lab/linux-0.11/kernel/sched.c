@@ -122,6 +122,14 @@ void update_times()
 }
 
 /*
+ * 将 SCHED_ALGORITHM 的值改为 SCHED_DEFAULT 或 SCHED_RR 即可。
+ */
+#define SCHED_DEFAULT 0 // 原始的优先级调度算法
+#define SCHED_RR 1		// 朴素时间片轮转调度算法 
+
+#define SCHED_ALGORITHM SCHED_RR
+
+/*
  *  'schedule()' is the scheduler function. This is GOOD CODE! There
  * probably won't be any reason to change this, as it should work well
  * in all circumstances (ie gives IO-bound processes good response etc).
@@ -153,6 +161,8 @@ void schedule(void)
 
 	/* this is the scheduler proper: */
 
+#if (SCHED_ALGORITHM == SCHED_DEFAULT)
+	/* 算法一：原始的 Linux 0.11 优先级调度算法                                   */
 	while (1)
 	{
 		c = -1;
@@ -173,13 +183,63 @@ void schedule(void)
 				(*p)->counter = ((*p)->counter >> 1) +
 								(*p)->priority;
 	}
-	// 新加入的代码
+
+#else
+	/* ======================================================================= */
+	/* 算法二：改进的朴素时间片轮转调度算法 (Round-Robin)                     */
+	/* ======================================================================= */
+	// 轮转查找下一个就绪进程
+	for (i = 1; i < NR_TASKS; i++) {
+		int p_idx = (current->pid + i) % NR_TASKS;
+		
+		if (task[p_idx] && task[p_idx]->state == TASK_RUNNING) {
+			next = p_idx;
+			goto switch_and_log; // 找到就直接跳转去切换
+		}
+	}
+
+	// 如果上面的循环没有找到任何可运行的进程，说明就绪队列为空。
+	// 这时需要重置所有任务的时间片。
+	for(p = &LAST_TASK; p > &FIRST_TASK; --p) {
+		if (*p) {
+			(*p)->counter = ((*p)->counter >> 1) + (*p)->priority;
+		}
+	}
+
+	// 重置后，再次查找最优的进程来运行（counter最大的那个）
+	c = -1;
+	next = 0;
+	for (i = NR_TASKS - 1; i > 0; i--) {
+		if (task[i] && task[i]->state == TASK_RUNNING && task[i]->counter > c) {
+			c = task[i]->counter;
+			next = i;
+		}
+	}
+	// 如果还是没找到（例如，所有进程都在睡眠），那就默认调度 idle 任务(next=0)
+
+switch_and_log:
+	// 新加入的代码 (公共部分)
 	if (current != task[next])
 	{
 		if (current && current->state == TASK_RUNNING)
 			printlog("pid=%d, state=J, time=%ld\n", current->pid, jiffies);
 		printlog("pid=%d, state=R, time=%ld\n", task[next]->pid, jiffies);
 	}
+
+	switch_to(next);
+	return;
+
+
+#endif
+
+	// 公共部分
+	if (current != task[next])
+	{
+		if (current && current->state == TASK_RUNNING)
+			printlog("pid=%d, state=J, time=%ld\n", current->pid, jiffies);
+		printlog("pid=%d, state=R, time=%ld\n", task[next]->pid, jiffies);
+	}
+
 	switch_to(next);
 }
 

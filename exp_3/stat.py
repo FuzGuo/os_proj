@@ -14,10 +14,14 @@ with open(log_file, "r") as f:
         if match:
             pid = int(match.group(1))
             run_time = int(match.group(3))
-            wait_time = int(match.group(4))
             turnaround_time = int(match.group(5))
-            result.append((pid, run_time, wait_time, turnaround_time))
+            if 6 <= pid <= 11:
+                result.append((pid, run_time, turnaround_time))
 
-print("pid\trun_time\twait_time\tturnaround_time")
-for pid, run_time, wait_time, turnaround_time in result:
-    print(f"{pid}\t{run_time}\t\t{wait_time}\t\t{turnaround_time}")
+print("pid\trun_time\tturnaround_time")
+total_turnaround = 0
+for pid, run_time, turnaround_time in result:
+    print(f"{pid}\t{run_time}\t\t{turnaround_time}")
+    total_turnaround += turnaround_time
+
+print(f"\n总周转时间：{total_turnaround} 时钟周期")
