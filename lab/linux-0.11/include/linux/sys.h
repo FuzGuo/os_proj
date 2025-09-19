@@ -73,6 +73,12 @@ extern int sys_setregid();
 extern int sys_whoami();
 extern int sys_iam();
 
+/* 新增的信号量系统调用声明 */
+extern int sys_sem_create();
+extern int sys_sem_set();
+extern int sys_sem_wait();
+extern int sys_sem_signal();
+
 fn_ptr sys_call_table[] = { sys_setup, sys_exit, sys_fork, sys_read,
 sys_write, sys_open, sys_close, sys_waitpid, sys_creat, sys_link,
 sys_unlink, sys_execve, sys_chdir, sys_time, sys_mknod, sys_chmod,
@@ -85,4 +91,4 @@ sys_getgid, sys_signal, sys_geteuid, sys_getegid, sys_acct, sys_phys,
 sys_lock, sys_ioctl, sys_fcntl, sys_mpx, sys_setpgid, sys_ulimit,
 sys_uname, sys_umask, sys_chroot, sys_ustat, sys_dup2, sys_getppid,
 sys_getpgrp, sys_setsid, sys_sigaction, sys_sgetmask, sys_ssetmask,
-sys_setreuid,sys_setregid, sys_whoami, sys_iam };
+sys_setreuid,sys_setregid, sys_whoami, sys_iam,sys_sem_create, sys_sem_set, sys_sem_wait, sys_sem_signal };

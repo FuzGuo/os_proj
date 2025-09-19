@@ -129,8 +129,14 @@
 #define __NR_ssetmask	69
 #define __NR_setreuid	70
 #define __NR_setregid	71
+
 #define __NR_whoami	72
 #define __NR_iam	73
+
+#define _NR_sem_create 74
+#define _NR_sem_set    75
+#define _NR_sem_wait   76
+#define _NR_sem_signal 77
 
 #define _syscall0(type,name) \
 type name(void) \

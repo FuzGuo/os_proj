@@ -50,6 +50,7 @@ extern void floppy_init(void);
 extern void mem_init(long start, long end);
 extern long rd_init(long mem_start, int length);
 extern long kernel_mktime(struct tm * tm);
+extern void sem_init(void); // 1. 添加外部声明
 extern long startup_time;
 
 /*
@@ -130,6 +131,7 @@ void main(void)		/* This really IS void, no error here. */
 	tty_init();
 	time_init();
 	sched_init();
+	sem_init();// 2. 初始化信号量子系统
 	buffer_init(buffer_memory_end);
 	hd_init();
 	floppy_init();
