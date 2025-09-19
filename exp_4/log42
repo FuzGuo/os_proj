@@ -1,0 +1,23 @@
+This is a Demo of Producer-Consumer problem
+The number of Producer-Consumer buffers is: 3
+Producer 28: PRODUCE a item=0
+Producer 28: PRODUCE a item=1
+Producer 28: PRODUCE a item=2
+Consumer 29: CONSUME a item=0
+Consumer 29: CONSUME a item=1
+Consumer 29: CONSUME a item=2
+Producer 28: PRODUCE a item=3
+Producer 28: PRODUCE a item=4
+Producer 28: PRODUCE a item=5
+Consumer 29: CONSUME a item=3
+Consumer 29: CONSUME a item=4
+Consumer 29: CONSUME a item=5
+Producer 28: PRODUCE a item=6
+Producer 28: PRODUCE a item=7
+Producer 28: PRODUCE a item=8
+Consumer 29: CONSUME a item=6
+Consumer 29: CONSUME a item=7
+Consumer 29: CONSUME a item=8
+Producer 28: PRODUCE a item=9
+Consumer 29: CONSUME a item=9
+Producer-Consumer Demo Finished

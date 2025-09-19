@@ -1,0 +1,46 @@
+ Demo without Semaphores 
+Consumer 26 started, target is 20 items.
+Producer 25 started, target is 20 items.
+Producer 25: SUCCESS producing item 0
+Producer 25: SUCCESS producing item 1
+Producer 25: SUCCESS producing item 2
+Consumer 26: SUCCESS consuming item 0
+Consumer 26: SUCCESS consuming item 1
+Consumer 26: SUCCESS consuming item 2
+Producer 25: SUCCESS producing item 3
+Producer 25: SUCCESS producing item 4
+Producer 25: SUCCESS producing item 5
+Consumer 26: SUCCESS consuming item 3
+Consumer 26: SUCCESS consuming item 4
+Consumer 26: SUCCESS consuming item 5
+Producer 25: SUCCESS producing item 6
+Producer 25: SUCCESS producing item 7
+Producer 25: SUCCESS producing item 8
+Consumer 26: SUCCESS consuming item 6
+Consumer 26: SUCCESS consuming item 7
+Consumer 26: SUCCESS consuming item 8
+Producer 25: SUCCESS producing item 9
+Producer 25: SUCCESS producing item 10
+Producer 25: SUCCESS producing item 11
+Consumer 26: SUCCESS consuming item 9
+Consumer 26: SUCCESS consuming item 10
+Consumer 26: SUCCESS consuming item 11
+Producer 25: SUCCESS producing item 12
+Producer 25: SUCCESS producing item 13
+Producer 25: SUCCESS producing item 14
+Consumer 26: SUCCESS consuming item 12
+Consumer 26: SUCCESS consuming item 13
+Consumer 26: SUCCESS consuming item 14
+Producer 25: SUCCESS producing item 15
+Producer 25: SUCCESS producing item 16
+Producer 25: SUCCESS producing item 17
+Consumer 26: SUCCESS consuming item 15
+Consumer 26: SUCCESS consuming item 16
+Consumer 26: SUCCESS consuming item 17
+Producer 25: SUCCESS producing item 18
+Producer 25: SUCCESS producing item 19
+ Producer 25 Finished , Success: 20, Failures: 37763
+Consumer 26: SUCCESS consuming item 18
+Consumer 26: SUCCESS consuming item 19
+ Consumer 26 Finished, Success: 20, Failures: 50801
+ Demo without Semaphores Finished 

@@ -1,0 +1,26 @@
+ Demo with Semaphores (3 Producers, 3 Consumers) 
+Producer 33: PRODUCE a item=3300
+Producer 33: PRODUCE a item=3301
+Producer 33: PRODUCE a item=3302
+Consumer 36: CONSUME a item=3300
+Consumer 34: CONSUME a item=3301
+Producer 32: PRODUCE a item=3200
+Consumer 35: CONSUME a item=3302
+Consumer 34: CONSUME a item=3200
+Producer 32: PRODUCE a item=3201
+Producer 33: PRODUCE a item=3303
+Consumer 35: CONSUME a item=3201
+Producer 32: PRODUCE a item=3202
+Consumer 35: CONSUME a item=3303
+Producer 32: PRODUCE a item=3203
+Consumer 35: CONSUME a item=3202
+Producer 31: PRODUCE a item=3100
+Producer 31: PRODUCE a item=3101
+Consumer 36: CONSUME a item=3203
+Consumer 36: CONSUME a item=3100
+Producer 31: PRODUCE a item=3102
+Producer 31: PRODUCE a item=3103
+Consumer 36: CONSUME a item=3101
+Consumer 34: CONSUME a item=3102
+Consumer 34: CONSUME a item=3103
+ Demo (3P/3C) Finished 
