@@ -133,10 +133,14 @@
 #define __NR_whoami	72
 #define __NR_iam	73
 
-#define _NR_sem_create 74
-#define _NR_sem_set    75
-#define _NR_sem_wait   76
-#define _NR_sem_signal 77
+#define __NR_sem_create 74
+#define __NR_sem_set    75
+#define __NR_sem_wait   76
+#define __NR_sem_signal 77
+
+// ADD THESE TWO LINES
+#define __NR_pc_insert  78
+#define __NR_pc_delete  79
 
 #define _syscall0(type,name) \
 type name(void) \

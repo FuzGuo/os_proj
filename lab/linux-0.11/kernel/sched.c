@@ -127,7 +127,7 @@ void update_times()
 #define SCHED_DEFAULT 0 // 原始的优先级调度算法
 #define SCHED_RR 1		// 朴素时间片轮转调度算法 
 
-#define SCHED_ALGORITHM SCHED_RR
+#define SCHED_ALGORITHM SCHED_DEFAULT
 
 /*
  *  'schedule()' is the scheduler function. This is GOOD CODE! There
