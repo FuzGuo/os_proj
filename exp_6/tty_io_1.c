@@ -15,7 +15,7 @@
 #include <signal.h>
 #include <linux/kernel.h> // 为了使用 printk
 #include <termios.h>
-	
+
 #define ALRMMASK (1 << (SIGALRM - 1))
 #define KILLMASK (1 << (SIGKILL - 1))
 #define INTMASK (1 << (SIGINT - 1))
@@ -34,7 +34,7 @@
 
 #define L_CANON(tty) _L_FLAG((tty), ICANON)
 #define L_ISIG(tty) _L_FLAG((tty), ISIG)
-#define L_ECHO(tty) _L_FLAG((tty), ECHO)  //_L_FLAG((tty), ECHO)
+#define L_ECHO(tty) 1  //_L_FLAG((tty), ECHO)
 #define L_ECHOE(tty) _L_FLAG((tty), ECHOE)
 #define L_ECHOK(tty) _L_FLAG((tty), ECHOK)
 #define L_ECHOCTL(tty) _L_FLAG((tty), ECHOCTL)
@@ -59,7 +59,7 @@ struct tty_struct tty_table[] = {
 		{ICRNL,			/* change incoming CR to NL */
 		 OPOST | ONLCR, /* change outgoing NL to CRNL */
 		 0,
-		 ISIG | ICANON | ECHOCTL | ECHOKE | ECHO, 
+		 ISIG | ICANON | ECHOCTL | ECHOKE, //这里面移除了ECHO
 		 0, /* console termio */
 		 INIT_C_CC},
 		0, /* initial pgrp */
@@ -153,7 +153,7 @@ void copy_to_cooked(struct tty_struct *tty)
 	{
 		GETCH(tty->read_q, c);
 		if (c == 13)
-			if (I_CRNL(tty))
+			if (1)
 				c = 10;
 			else if (I_NOCR(tty))
 				continue;

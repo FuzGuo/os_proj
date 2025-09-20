@@ -15,7 +15,7 @@
 #include <signal.h>
 #include <linux/kernel.h> // 为了使用 printk
 #include <termios.h>
-	
+
 #define ALRMMASK (1 << (SIGALRM - 1))
 #define KILLMASK (1 << (SIGKILL - 1))
 #define INTMASK (1 << (SIGINT - 1))
