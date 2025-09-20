@@ -399,8 +399,8 @@ key_table:
 	.long cursor,cursor,do_self,cursor	
 	.long cursor,cursor,do_self,cursor	
 	.long cursor,cursor,cursor,cursor	
-	.long none,none,do_self,func		
-	.long func,none,none,none		
+	.long none,none,do_self,f11_func		
+	.long f12_func,none,none,none		
 	.long none,none,none,none		
 	.long none,none,none,none		
 	.long none,none,none,none		
